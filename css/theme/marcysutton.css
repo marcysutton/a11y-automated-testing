@@ -98,28 +98,34 @@
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
+body {
+  background: black url("../../img/backgrounds/8bit-pizza-gradient.jpg") repeat center top;
+  background-size: cover;
+  font-family: 'RobotoDraft', sans-serif, sans-serif; }
+
 .reveal {
+  background-color: rgba(0, 0, 0, 0.8);
   font-size: 36px;
   font-weight: 200;
-  color: #212121; }
+  color: #fff; }
   .reveal iframe {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75); }
   .reveal code {
     font-size: 110%; }
   .reveal pre {
-    background-color: black;
+    background-color: #000;
     display: block;
     position: relative;
     width: 90%;
     margin: 15px auto;
     text-align: left;
-    font-size: .55em;
+    font-size: 0.55em;
     font-family: monospace;
     line-height: 1.2em;
     word-wrap: break-word;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
     .reveal pre code, .reveal pre > div {
-      background-color: black;
+      background-color: #000;
       color: #ccc;
       font-size: 1.75em;
       line-height: 1.45em;
@@ -150,7 +156,11 @@
     padding-bottom: 30px;
     text-align: left;
     width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s;
     z-index: 11; }
+    .title-slide .reveal footer {
+      opacity: 0; }
     .reveal footer .copyright {
       display: inline-block;
       padding: 5px 15px;
@@ -186,7 +196,7 @@
  * HEADERS
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  color: #3f51b5;
+  color: #fff;
   font-family: 'RobotoDraft', sans-serif, sans-serif;
   line-height: 1;
   letter-spacing: 0.02em;
@@ -203,7 +213,7 @@
 .reveal h4, .reveal h2.h4-style, .reveal h3.h4-style, .reveal p.h4-style {
   font-size: 1.45em; }
 .reveal h2 strong, .reveal h3 strong {
-  color: #0277bb; }
+  color: #E3C402; }
 .reveal .larger {
   font-size: 120%; }
 .reveal .smaller {
@@ -237,7 +247,7 @@
     content: '\201D';
     right: 0px; }
   .reveal blockquote cite {
-    color: #333;
+    color: #000;
     display: block;
     margin-top: 0.5em; }
   .reveal blockquote p {
@@ -291,13 +301,13 @@
   .reveal section figure img {
     margin: 0; }
   .reveal section figure .note {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     font-style: italic;
     padding: 3px 5px;
     position: absolute; }
   .reveal section figure figcaption {
-    color: #333;
+    color: #000;
     font-style: italic;
     font-size: 1em;
     margin: 0;
@@ -307,19 +317,19 @@
   text-align: left; }
   .reveal .left-align p {
     margin-bottom: 0.75em; }
-.reveal .big-italic, .reveal .big-stat {
+.reveal .big-italic, .reveal .reveal .big-stat, .reveal .reveal .big-stat {
   font-size: 1.5em;
   font-weight: normal;
   text-transform: none; }
-  .reveal .big-italic.smaller, .reveal .smaller.big-stat {
+  .reveal .big-italic.smaller, .reveal .reveal .smaller.big-stat, .reveal .reveal .smaller.big-stat {
     font-size: 1.5em; }
-  .reveal .big-italic.smallest, .reveal .smallest.big-stat {
+  .reveal .big-italic.smallest, .reveal .reveal .smallest.big-stat, .reveal .reveal .smallest.big-stat {
     font-size: 1.15em; }
 .reveal .big-stat {
   display: block;
   font-size: 300%; }
 .reveal .large-tag-wrap {
-  background-color: #333;
+  background-color: #000;
   padding: 1em; }
 .reveal .large-tag {
   color: #ccc;
@@ -374,19 +384,19 @@
  *********************************************/
 .reveal a:not(.image), .reveal .highlight {
   border: 1px solid transparent;
-  color: #0277bb;
+  color: #E3C402;
   text-decoration: none;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s; }
-.reveal a:not(.image):hover, .reveal a:not(.image):focus {
-  border: 1px dotted #666;
-  color: #01476f; }
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+.reveal a:not(.image):hover, .reveal a:not(.image):focus, .reveal button:focus {
+  color: #ED4B40;
+  outline: 1px dotted #fff; }
 .reveal .roll span:after {
   color: #fff;
-  background: #01476f; }
+  background: #978101; }
 
 /*********************************************
  * IMAGES
@@ -394,13 +404,13 @@
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #212121;
+  border: 4px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  -webkit-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -ms-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear; }
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
   .reveal section img.plain {
     background-color: transparent;
     border-width: 0;
@@ -416,7 +426,7 @@
   outline: none; }
   .reveal a:hover img, .reveal a:focus img {
     background: rgba(255, 255, 255, 0.2);
-    border-color: #0277bb;
+    border-color: #E3C402;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -425,29 +435,29 @@
 .reveal .controls {
   bottom: 30px; }
 
-.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
-  border-right-color: #0277bb; }
+.reveal .controls button.navigate-left, .reveal .controls button.navigate-left.enabled {
+  border-right-color: #E3C402; }
 
-.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
-  border-left-color: #0277bb; }
+.reveal .controls button.navigate-right, .reveal .controls button.navigate-right.enabled {
+  border-left-color: #E3C402; }
 
-.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #0277bb; }
+.reveal .controls button.navigate-up, .reveal .controls button.navigate-up.enabled {
+  border-bottom-color: #E3C402; }
 
-.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
-  border-top-color: #0277bb; }
+.reveal .controls button.navigate-down, .reveal .controls button.navigate-down.enabled {
+  border-top-color: #E3C402; }
 
-.reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #01476f; }
+.reveal .controls button.navigate-left.enabled:hover {
+  border-right-color: #ED4B40; }
 
-.reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #01476f; }
+.reveal .controls button.navigate-right.enabled:hover {
+  border-left-color: #ED4B40; }
 
-.reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #01476f; }
+.reveal .controls button.navigate-up.enabled:hover {
+  border-bottom-color: #ED4B40; }
 
-.reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #01476f; }
+.reveal .controls button.navigate-down.enabled:hover {
+  border-top-color: #ED4B40; }
 
 /*********************************************
  * TABLES
@@ -468,11 +478,11 @@
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  background: rgba(63, 81, 181, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   height: 10px; }
 
 .reveal .progress span {
-  background: #3f51b5;
+  background: rgba(227, 196, 2, 0.75);
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -511,7 +521,7 @@
     margin-right: 2%; }
 
 .reveal .twoThirdsCol pre, .reveal .halfCol pre {
-  font-size: .5em;
+  font-size: 0.5em;
   margin-top: 0;
   width: 100%; }
 
@@ -585,7 +595,7 @@
     background: transparent url(../../img/hamburger.svg) no-repeat;
     background-size: 100%;
     content: '';
-    color: #212121;
+    color: #fff;
     display: block;
     bottom: 0.5em;
     left: 0.5em;
@@ -593,7 +603,7 @@
     right: 0.5em;
     top: 0.5em; }
   .reveal .hamburger-button:focus, .reveal .hamburger-button:hover {
-    border: 6px solid #0277bb; }
+    border: 6px solid #E3C402; }
 .reveal .hamburger-menu {
   display: inline-block;
   padding: 0.5em 2em;
@@ -607,14 +617,14 @@
   .reveal .hamburger-menu.active {
     max-height: 500px; }
   .reveal .hamburger-menu li a {
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s; }
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
     .reveal .hamburger-menu li a:hover, .reveal .hamburger-menu li a:focus {
-      color: #01476f;
-      border-bottom: 1px solid #01476f; }
+      color: #ED4B40;
+      border-bottom: 1px solid #ED4B40; }
 .reveal #hamburgerTextDiv {
   position: relative;
   z-index: 1; }
@@ -632,7 +642,7 @@
   position: absolute;
   top: 0;
   width: 100%; }
-.reveal .themed-button, .reveal button.reset {
+.reveal .themed-button, .reveal .reveal button.reset, .reveal .reveal button.reset {
   background-color: #4285f4;
   border-radius: 3px;
   border-width: 0;
@@ -647,7 +657,7 @@
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
-  .reveal .themed-button:hover, .reveal button.reset:hover, .reveal .themed-button:focus, .reveal button.reset:focus {
+  .reveal .themed-button:hover, .reveal .reveal button.reset:hover, .reveal .reveal button.reset:hover, .reveal .themed-button:focus, .reveal .reveal button.reset:focus, .reveal .reveal button.reset:focus {
     background-color: #000;
     color: #fff; }
 .reveal button.reset {
@@ -668,7 +678,7 @@
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle; }
-.reveal .play button:before, .reveal .sparkle-party button:before {
+.reveal .play button:before, .reveal .play .reveal .sparkle-party, .reveal .reveal .play .sparkle-party {
   background: transparent;
   border: 58px solid transparent;
   border-width: 58px 78px;
@@ -680,7 +690,7 @@
   top: 40%;
   left: 50%;
   transition: 0.5s; }
-.reveal .play button:hover:before, .reveal .sparkle-party button:hover:before, .reveal .play button:focus:before, .reveal .sparkle-party button:focus:before, .reveal .play button:active:before, .reveal .sparkle-party button:active:before {
+.reveal .play button:hover:before, .reveal .play .reveal .sparkle-party, .reveal .reveal .play .sparkle-party, .reveal .play button:focus:before, .reveal .play .reveal .sparkle-party, .reveal .reveal .play .sparkle-party, .reveal .play button:active:before, .reveal .play .reveal .sparkle-party, .reveal .reveal .play .sparkle-party {
   background: transparent;
   border-left-color: white; }
 .reveal .sparkle-party {
@@ -710,7 +720,7 @@
   .reveal p.byline a {
     color: #fff; }
 .reveal a.substantial-logo {
-  color: #0277bb;
+  color: #E3C402;
   font-size: 0.85em;
   font-family: 'substantial-ico-fonts';
   letter-spacing: 0.3em;
@@ -721,7 +731,7 @@
     color: #fff;
     text-decoration: none; }
 .reveal .image-headline {
-  border: 4px solid #212121;
+  border: 4px solid #fff;
   margin-bottom: 10px; }
   .reveal .image-headline#lemur {
     background: transparent url(../../img/lemur.jpg) no-repeat center top;

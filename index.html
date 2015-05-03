@@ -14,12 +14,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="icon" type="image/x-icon" href="http://marcysutton.github.io/angular-a11y/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
 		<link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet" type="text/css">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/material.css">
+		<link rel="stylesheet" href="css/reveal.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -42,8 +41,9 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-title="Author: Marcy Sutton">
-          <h1>30 Minutes or Less: The Magic of Automated Accessibility Testing</h1>
+				<section data-state="title-slide">
+          <h1>30 Minutes or Less: <br>
+            The Magic of Automated Accessibility Testing</h1>
 					<p>Marcy Sutton, Seattle, WA<br>Developer <a href="http://twitter.com/substantial" target="_blank" title="Link opens in a new window">@Substantial</a>, Angular Core Team Member</p>
 					<p>Slides: <a href="http://marcysutton.github.io/angular-a11y">http://marcysutton.github.io/a11y-automated-testing</a></p>
 				</section>
@@ -65,7 +65,7 @@
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="js/reveal.min.js"></script>
 		<script>
 
 			// Full list of configuration options available here:
@@ -76,6 +76,10 @@
 				history: true,
 				center: true,
 
+        keyboard: {
+          13: 'next', // go to the next slide when the ENTER key is pressed
+          27: function() {} // do something custom when ESC is pressed
+        },
 				// The "normal" size of the presentation, aspect ratio will be preserved
 		    // when the presentation is scaled to fit different resolutions. Can be
 		    // specified using percentage units.
@@ -91,10 +95,6 @@
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [

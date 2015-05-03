@@ -100,11 +100,13 @@
  *********************************************/
 
 body {
-  // background: black url("backgrounds/space.jpg") repeat center top;
-  // background-size: cover;
+  background: black url("../../img/backgrounds/8bit-pizza-gradient.jpg") repeat center top;
+  background-size: cover;
+  font-family: $mainFont, sans-serif;
 }
 
 .reveal {
+  background-color: rgba(0, 0, 0, 0.8);
 	font-size: $mainFontSize;
 	font-weight: 200;
 	color: $mainColor;
@@ -117,7 +119,7 @@ body {
   }
 
   pre {
-    background-color: black;
+    background-color: $codeBackgroundColor;
     display: block;
     position: relative;
     width: 90%;
@@ -130,7 +132,7 @@ body {
     box-shadow: 0 0 6px rgba(0,0,0,.3);
 
     code, & > div {
-      background-color: black;
+      background-color: $codeBackgroundColor;
       color: $tertiaryColor;
       font-size: 1.75em;
       line-height: 1.45em;
@@ -176,7 +178,13 @@ body {
     padding-bottom: 30px;
     text-align: left;
     width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s;
     z-index: 11;
+
+    .title-slide & {
+      opacity: 0;
+    }
 
     .copyright {
       display: inline-block;
@@ -503,9 +511,12 @@ body {
   	     -o-transition: all .5s;
   	        transition: all .5s;
   }
-	a:not(.image):hover, a:not(.image):focus {
-    border: 1px dotted #666;
+	a:not(.image):hover,
+  a:not(.image):focus,
+  button:focus {
+    // border: 1px dotted $mainColor;
 		color: $linkColorHover;
+    outline: 1px dotted $mainColor;
 	}
 
   .roll span:after {
@@ -568,39 +579,39 @@ body {
 .reveal .controls {
   bottom: 30px;
 }
-.reveal .controls div.navigate-left,
-.reveal .controls div.navigate-left.enabled {
+.reveal .controls button.navigate-left,
+.reveal .controls button.navigate-left.enabled {
 	border-right-color: $linkColor;
 }
 
-.reveal .controls div.navigate-right,
-.reveal .controls div.navigate-right.enabled {
+.reveal .controls button.navigate-right,
+.reveal .controls button.navigate-right.enabled {
 	border-left-color: $linkColor;
 }
 
-.reveal .controls div.navigate-up,
-.reveal .controls div.navigate-up.enabled {
+.reveal .controls button.navigate-up,
+.reveal .controls button.navigate-up.enabled {
 	border-bottom-color: $linkColor;
 }
 
-.reveal .controls div.navigate-down,
-.reveal .controls div.navigate-down.enabled {
+.reveal .controls button.navigate-down,
+.reveal .controls button.navigate-down.enabled {
 	border-top-color: $linkColor;
 }
 
-.reveal .controls div.navigate-left.enabled:hover {
+.reveal .controls button.navigate-left.enabled:hover {
 	border-right-color: $linkColorHover;
 }
 
-.reveal .controls div.navigate-right.enabled:hover {
+.reveal .controls button.navigate-right.enabled:hover {
 	border-left-color: $linkColorHover;
 }
 
-.reveal .controls div.navigate-up.enabled:hover {
+.reveal .controls button.navigate-up.enabled:hover {
 	border-bottom-color: $linkColorHover;
 }
 
-.reveal .controls div.navigate-down.enabled:hover {
+.reveal .controls button.navigate-down.enabled:hover {
 	border-top-color: $linkColorHover;
 }
 
@@ -635,7 +646,7 @@ body {
   height: 10px;
 }
 	.reveal .progress span {
-		background: $headingColor;
+		background: transparentize($linkColor, 0.25);
 
 		-webkit-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 		   -moz-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
