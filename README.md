@@ -1,12 +1,13 @@
-#Angular Accessibility
-[http://marcysutton.github.io/angular-a11y/](http://marcysutton.github.io/angular-a11y/)
+#30 Minutes or Less: The Magic of Automated Accessibility Testing
+[http://marcysutton.github.io/a11y-automated-testing/](http://marcysutton.github.io/a11y-automated-testing/)
 
 By [Marcy Sutton](http://marcysutton.com)<br>
-Developer at [Substantial](http://substantial.com) and accessibility engineer on Angular.js Material Design<br>
+Developer at [Substantial](http://substantial.com), Angular core team member<br>
 twitter: [@marcysutton](http://twitter.com/marcysutton)
 
-##Presented at:
-* ngEurope 2014
+##Presenting at:
+* Seattle Software Craftsmanship Meetup
+* JSConf US 2015
 
 ## Installation
 
