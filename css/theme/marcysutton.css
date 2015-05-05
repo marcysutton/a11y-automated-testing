@@ -198,7 +198,7 @@ body {
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   color: #fff;
   font-family: 'RobotoDraft', sans-serif, sans-serif;
-  line-height: 1;
+  line-height: 1.15;
   letter-spacing: 0.02em;
   margin: 0 0 20px 0;
   text-transform: none; }
@@ -341,15 +341,17 @@ body {
 .reveal .muted {
   color: #999; }
 .reveal ul {
-  font-size: 1.5em;
-  line-height: 1.25;
   list-style: none;
   margin: 0.5em 0;
   text-align: center; }
   .reveal ul.inline li {
     display: inline-block; }
   .reveal ul li {
+    font-size: 1.5em;
+    line-height: 1.25;
     margin-bottom: 0.25em; }
+    .reveal ul li ul li {
+      font-size: 1em; }
   .reveal ul.left-aligned {
     list-style: disc;
     text-align: left; }

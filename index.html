@@ -41,6 +41,11 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+        <!--<section data-state="title-slide">
+          <img src="img/backgrounds/adventure-time.gif" alt="Psychadelic gif of Finn from Adventure Time dreaming of pizza and eating through his eyeballs sortof">
+          <aside class="notes">I wanted a way to work pizza into this accessibility talk. So let's order a pizza, and I'll teach you how to automate accessibility into your workflow in the time it takes to get here.</aside>
+        </section>-->
+
 				<section data-state="title-slide">
           <h1>30 Minutes or Less: <br>
             The Magic of Automated Accessibility Testing</h1>
@@ -49,7 +54,145 @@
 				</section>
 
         <section>
+          <h2>Accessibility is the answer to a more inclusive Web.</h2>
+          <h3><em>(Pizza is also always the answer.)</em></h3>
+          <aside class="notes">
+            Accessibility is about people.
+          </aside>
+        </section>
 
+        <section>
+          <h2>People</h2>
+          <ul>
+            <li>Have vision impairments</li>
+            <li class="fragment">See colors differently</li>
+            <li class="fragment">Need audio descriptions</li>
+            <li class="fragment">Navigate with a keyboard only</li>
+            <li class="fragment">Don't know what your icons mean</li>
+            <li class="fragment">Could do without more parallax</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>How to Accessibility</h2>
+          <figure>
+            <img src="img/adventure-time-sucking.png" alt="Dude, sucking at something is the first step towards being sort of good at something. Jake the Dog from Adventure Time" style="min-height:400px;">
+          </figure>
+        </section>
+
+        <section>
+          <h2>Let tooling to do some heavy lifting for you.</h2>
+        </section>
+
+        <section>
+          <h2>Let's talk about:</h2>
+          <ul>
+            <li>Manual Testing</li>
+            <li>Sorta-Automated Testing</li>
+            <li>Definitely Automated Testing</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Technologies</h2>
+          <ul>
+            <li><em>OSX:</em> Safari, Chrome, Firefox</li>
+            <li class="fragment"><em>Windows:</em> IE, Firefox, Chrome
+              <ul class="fragment">
+                <li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
+                <li><a href="https://www.modern.ie/en-us/virtualization-tools">Modern.ie</a></li>
+                <li><a href="http://www.freedomscientific.com/Downloads/JAWS">JAWS Demo</a></li>
+                <li><a href="http://www.nvaccess.org/">NVDA</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="h3-style">First thing I do:</h2>
+          <h3 class="h2-style">Tab through a page with the keyboard</h3>
+          <p><a href="#">Some page to demo</a></p>
+        </section>
+
+        <section>
+          <h2 class="h3-style">Next thing:</h2>
+          <h3 class="h2-style">Demo using a screen reader</h3>
+          <p><a href="#">Some demo link</a></p>
+          <aside class="notes">
+            <ul>
+              <li>Safari &amp; Voiceover (mobile too)</li>
+              <li>IE &amp; JAWS</li>
+              <li>Firefox &amp; NVDA</li>
+              <li>Android TalkBack &amp; Firefox</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2 class="h1-style">Sorta-Automated Testing</h2>
+        </section>
+
+        <section>
+          <h2>Headings &amp; Semantic Structure</h2>
+          <div style="position: relative;">
+            <div>
+              <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
+            </div>
+            <div class="fragment" style="position:absolute; top: 0; text-align: center; width: 100%;">
+              <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Chrome Accessibility<br>Developer Tools</h2>
+          <ul>
+            <li>Browser Extension</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Let's run an audit</h2>
+          <img src="img/finn_and_jake_by_mlpochea-highfive.png" alt="Jake and Finn high fiving" class="plain">
+        </section>
+
+        <section>
+          <h2 class="h3-style">Chrome Accessibility Developer Tools</h2>
+          <h3 class="h2-style">Open Source Audit Library</h3>
+          <img src="img/github-a11y-developer-tools.png" alt="Audit JS files on Github">
+        </section>
+
+        <section>
+          <h2>What do you do with those?</h2>
+          <img src="img/finn-hmmm.png" alt="Finn: Hmm" style="min-height: 400px;">
+        </section>
+
+        <section>
+          <h2 class="h1-style">Definitely Automated Testing</h2>
+        </section>
+
+        <section>
+          <h2><a href="http://addyosmani.github.io/a11y/">A11y by Addy Osmani</a></h2>
+        </section>
+
+        <section>
+          <h2>Angular Protractor</h2>
+          <ul>
+            <li>Focus management</li>
+            <li>Color contrast</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Unit Tests for A11y</h2>
+          <ul>
+            <li>Radio buttons: semantics, keyboard access</li>
+            <li>Labeling</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>React a11y</h2>
         </section>
 
 
