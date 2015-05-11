@@ -41,8 +41,8 @@ $altLinkColor: #55491F;
 $buttonColor: #4285f4;
 $buttonTextColor: $white;
 
-$separatorColor: transparentize(#000000, 0.88);
-$separatorHeight: 5px;
+$separatorColor: darken($mainColor, 50%);
+$separatorHeight: 4px;
 
 // Text selection
 $selectionBackgroundColor: #97948f;

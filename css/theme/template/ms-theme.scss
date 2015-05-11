@@ -382,18 +382,18 @@ body {
         margin: 0;
       }
       .note {
-        background-color: $darkColor;
+        background-color: $mainColor;
         color: $white;
         font-style: italic;
         padding: 3px 5px;
         position: absolute;
       }
       figcaption {
-        color: $darkColor;
+        color: $mainColor;
         font-style: italic;
         font-size: 1em;
         margin: 0;
-        padding: 0.2em 0 0.75em;
+        padding: 0.5em 0 0.75em;
         text-align: center;
       }
     }
@@ -444,11 +444,6 @@ body {
     margin: 0.5em 0;
     text-align: center;
 
-    &.inline {
-      li {
-        display: inline-block;
-      }
-    }
     li {
       font-size: $paragraphFontSize;
       line-height: 1.25;
@@ -456,6 +451,20 @@ body {
 
       ul li {
         font-size: 1em;
+      }
+    }
+    &.inline {
+      li {
+        display: inline-block;
+      }
+    }
+    &.relative {
+      position: relative;
+      padding-bottom: 300px;
+
+      .absolute {
+        position: absolute;
+        width: 100%;
       }
     }
     &.left-aligned {
@@ -556,6 +565,11 @@ body {
           background-color: rgba(207, 241, 16, 0.5);
         }
       }
+      &.whiteBg {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 0.15em;
+        margin: 0;
+      }
     }
   }
   img.freezeframe_done {
@@ -578,57 +592,27 @@ body {
 }
 
 /*********************************************
- * NAVIGATION CONTROLS
- *********************************************/
-.reveal .controls {
-  bottom: 30px;
-}
-.reveal .controls button.navigate-left,
-.reveal .controls button.navigate-left.enabled {
-	border-right-color: $linkColor;
-}
-
-.reveal .controls button.navigate-right,
-.reveal .controls button.navigate-right.enabled {
-	border-left-color: $linkColor;
-}
-
-.reveal .controls button.navigate-up,
-.reveal .controls button.navigate-up.enabled {
-	border-bottom-color: $linkColor;
-}
-
-.reveal .controls button.navigate-down,
-.reveal .controls button.navigate-down.enabled {
-	border-top-color: $linkColor;
-}
-
-.reveal .controls button.navigate-left.enabled:hover {
-	border-right-color: $linkColorHover;
-}
-
-.reveal .controls button.navigate-right.enabled:hover {
-	border-left-color: $linkColorHover;
-}
-
-.reveal .controls button.navigate-up.enabled:hover {
-	border-bottom-color: $linkColorHover;
-}
-
-.reveal .controls button.navigate-down.enabled:hover {
-	border-top-color: $linkColorHover;
-}
-
-/*********************************************
  * TABLES
  *********************************************/
 .reveal {
   table {
-    font-size: 0.75em;
+    font-size: 1.25em;
     line-height: 1;
+    margin: 20px auto;
+    width: 80%;
 
-    tbody tr {
-      border-top: 1px solid rgba(0,0,0,0.12);
+    tbody {
+      th {
+        background-color: transparent;
+        text-align: left;
+        width: 40%;
+      }
+      th + td {
+        text-align: right;
+      }
+      tr {
+        border-top: 1px solid rgba(0,0,0,0.12);
+      }
     }
 
     th {
@@ -641,6 +625,49 @@ body {
     }
   }
 }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  bottom: 30px;
+}
+.reveal .controls button.navigate-left,
+.reveal .controls button.navigate-left.enabled {
+  border-right-color: $linkColor;
+}
+
+.reveal .controls button.navigate-right,
+.reveal .controls button.navigate-right.enabled {
+  border-left-color: $linkColor;
+}
+
+.reveal .controls button.navigate-up,
+.reveal .controls button.navigate-up.enabled {
+  border-bottom-color: $linkColor;
+}
+
+.reveal .controls button.navigate-down,
+.reveal .controls button.navigate-down.enabled {
+  border-top-color: $linkColor;
+}
+
+.reveal .controls button.navigate-left.enabled:hover {
+  border-right-color: $linkColorHover;
+}
+
+.reveal .controls button.navigate-right.enabled:hover {
+  border-left-color: $linkColorHover;
+}
+
+.reveal .controls button.navigate-up.enabled:hover {
+  border-bottom-color: $linkColorHover;
+}
+
+.reveal .controls button.navigate-down.enabled:hover {
+  border-top-color: $linkColorHover;
+}
+
 /*********************************************
  * PROGRESS BAR
  *********************************************/
@@ -733,6 +760,13 @@ body {
     height: $separatorHeight;
     line-height: $separatorHeight;
     margin: 1em auto 0;
+
+    hr {
+      opacity: 0;
+    }
+  }
+  .bottom-space {
+    margin-bottom: 1em;
   }
   .inset-width-wider {
     margin: 1em auto 0;
@@ -781,86 +815,6 @@ body {
     min-width: 4.5em;
     outline: none;
     text-align: left
-  }
-  .hamburger-button {
-    background-color: transparent;
-    border: 6px solid transparent;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    padding-top: 61%;
-    position: relative;
-    width: 120px;
-    text-shadow: $paragraphTextShadow;
-    transition: border-color 0.25s;
-
-    &:before {
-      background: transparent url(../../img/hamburger.svg) no-repeat;
-      background-size: 100%;
-      content: '';
-      color: $mainColor;
-      display: block;
-      bottom: 0.5em;
-      left: 0.5em;
-      position: absolute;
-      right: 0.5em;
-      top: 0.5em;
-    }
-    &:focus, &:hover {
-      border: 6px solid $linkColor;
-    }
-  }
-  .hamburger-menu {
-    display: inline-block;
-    padding: 0.5em 2em;
-    max-height: 3em;
-    overflow: hidden;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
-    -webkit-transition: 1s;
-    transition: 1s;
-
-    &.active {
-      max-height: 500px;
-    }
-    li a {
-      -webkit-transition: all .5s;
-         -moz-transition: all .5s;
-          -ms-transition: all .5s;
-           -o-transition: all .5s;
-              transition: all .5s;
-
-      &:hover, &:focus {
-        color: $linkColorHover;
-        border-bottom: 1px solid $linkColorHover;
-      }
-    }
-  }
-  #hamburgerTextDiv {
-    position: relative;
-    z-index: 1;
-
-    h2 {
-      display: inline-block;
-      padding: 0 0.25em;
-    }
-
-    &.initialized {
-      h2 {
-        color: $backgroundColor;
-        text-shadow: none;
-      }
-    }
-  }
-  #hamburgerImgDiv {
-    background-repeat: repeat;
-    background-position: left center;
-    background-size: contain;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
   .themed-button {
     background-color: $buttonColor;
@@ -930,52 +884,11 @@ body {
     background: transparent;
     border-left-color: rgba(255, 255, 255, 1);
   }
-  .sparkle-party {
-    @extend .play;
-    min-height: 720px;
-    position: relative;
-
-    .enabled button {
-      display: none;
-    }
-    button {
-      background: black url(../../img/sparkle-party.jpg) no-repeat;
-      background-size: cover;
-      border: 0;
-      border-radius: none;
-      box-shadow: 2px 2px 2px #000;
-      cursor: pointer;
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 1;
-    }
-    object {
-      height: 100%;
-      min-height: 720px;
-      width: 100%;
-    }
-  }
   p.byline {
     font-size: 1.25em;
     margin-bottom: 4%;
     a {
       color: $white;
-    }
-  }
-  a.substantial-logo {
-    color: $linkColor;
-    font-size: 0.85em;
-    font-family: 'substantial-ico-fonts';
-    letter-spacing: 0.3em;
-    margin-left: 2%;
-    position: relative;
-    text-shadow: none;
-
-    &:hover, &:focus {
-      color: $white;
-      text-decoration: none;
     }
   }
   .image-headline {
