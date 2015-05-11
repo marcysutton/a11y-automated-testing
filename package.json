@@ -22,6 +22,7 @@
     "node": "~0.10.0"
   },
   "dependencies": {
+    "a11y": "^0.3.0",
     "underscore": "~1.5.1",
     "express": "~2.5.9",
     "mustache": "~0.7.2",
@@ -30,7 +31,6 @@
   "devDependencies": {
     "grunt-contrib-qunit": "~0.5.2",
     "grunt-contrib-jshint": "~0.6.4",
-    "a11y": "^0.3.0",
     "grunt-contrib-cssmin": "~0.12.2",
     "grunt-contrib-uglify": "~0.2.4",
     "grunt-contrib-watch": "~0.5.3",
@@ -39,7 +39,8 @@
     "grunt-autoprefixer": "~1.0.1",
     "grunt-zip": "~0.7.0",
     "grunt": "~0.4.0",
-    "node-sass": "~0.9.3"
+    "node-sass": "~0.9.3",
+    "tty.js": "^0.2.14-1"
   },
   "licenses": [
     {

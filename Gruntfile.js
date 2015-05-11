@@ -107,10 +107,11 @@ module.exports = function(grunt) {
           open: true,
           onCreateServer: function(server, connect, options) {
             app = tty.createServer({
-               "term": {
-                "termName": "xterm",
-                "geometry": [80, 19]
+              term: {
+                termName: "xterm",
+                geometry: [80, 19],
               },
+              cwd: "./demos/terminal",
               shell: 'bash',
               port: 8080
             });

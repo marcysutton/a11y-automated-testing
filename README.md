@@ -18,28 +18,33 @@ Some reveal.js features require that presentations run from a local web server. 
 
 1. Install [Node.js](http://nodejs.org/)
 
-2. Install [Grunt](http://gruntjs.com/getting-started#installing-the-cli)
+1. Install [Grunt](http://gruntjs.com/getting-started#installing-the-cli)
 
-4. Clone the reveal.js repository
+1. Clone the reveal.js repository
 ```
 $ git clone git@github.com:hakimel/reveal.js.git
 ```
 
-5. Navigate to the reveal.js folder
+1. Navigate to the reveal.js folder
 ```
 $ cd reveal.js
 ```
 
-6. Install dependencies
+1. Optional global dependencies (for my live demos)
+```
+$ sudo npm install -g a11y
+```
+
+1. Install local dependencies
 ```
 $ npm install
 ```
 
-7. Serve the presentation and monitor source files for changes
+1. Serve the presentation and monitor source files for changes
 ```
 $ grunt serve
 ```
 
-8. Open <http://localhost:8000> to view your presentation
+1. <http://localhost:8000> opens dynamically
 
 You can change the port by using `grunt serve --port 8001`.
