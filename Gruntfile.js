@@ -1,5 +1,11 @@
 /* global module:false */
+/* global require:false */
 module.exports = function(grunt) {
+  var tty = require('tty.js'),
+      a11y = require('a11y');
+
+  var app;
+
   var port = grunt.option('port') || 8888;
   // Project configuration
   grunt.initConfig({
@@ -97,8 +103,20 @@ module.exports = function(grunt) {
         options: {
           port: port,
           base: '.',
-                    livereload: true,
-                    open: true
+          livereload: true,
+          open: true,
+          onCreateServer: function(server, connect, options) {
+            app = tty.createServer({
+               "term": {
+                "termName": "xterm",
+                "geometry": [80, 19]
+              },
+              shell: 'bash',
+              port: 8080
+            });
+
+            app.listen();
+          }
         }
       }
     },
@@ -131,7 +149,7 @@ module.exports = function(grunt) {
         tasks: 'css-core'
       },
       html: {
-          files: [ 'index.html']
+        files: [ 'index.html']
       }
     }
 
