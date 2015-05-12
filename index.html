@@ -237,29 +237,43 @@
             <li>Incorrect ARIA attributes</li>
           </ul>
         </section>
+
+        <section>
+          <h2 class="h3-style"><a href="https://github.com/angular/material-start">Angular Material Start</a></h2>
+          <figure class="layeredFragments">
+            <div>
+              <img src="img/angular-material-start.png" alt="Demo app running on localhost" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-sublime.png" alt="Protractor config file open in Sublime Text" class="plain">
+            </div>
+          </figure>
+        </section>
         
         <section>
           <h2 class="h3-style">Write some tests, run some audits</h2>
           <figure class="full-screen-code">
           <pre class="smaller"><code class="javascript">
- describe('signups', function() {
-  it('should navigate to the signup form', function() {
-    browser.get('http://bring.pizza');
-    expect($('#title').getText()).toMatch('Pizza As a Service');
+ describe('material start', function() {
+  it('should open the bottom sheet', function() {
+    // click on share button
+    element(by.css('button.share')).click();
 
-    // click on signup button
-    element(by.css('button.signup')).click();
-
-    // verify focus was sent to first input field in view
-    element.all(by.css('input.first')).then(function(items) {
-      expect(items[0].getAttribute('id')).toEqual(browser.driver.switchTo().activeElement().getAttribute('id'));
+    // verify focus was sent into bottom sheet
+    element.all(by.css('[ng-click="vm.performAction(item)"]'))
+      .then(function(items) {
+        expect(items[0].getAttribute('id'))
+          .toEqual(browser.driver.switchTo().activeElement().getAttribute('id'));
     });
           </code></pre>
           </figure>
         </section>
 
         <section>
-          <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" style="width: 100%;" class="plain">
+          <h2 class="h3-style">Bonus: Chrome A11y Developer Tools</h2>
+          <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" class="plain">
+        </section>
+
         </section>
 
         <!--<section>
@@ -276,7 +290,7 @@
       
         <section>
           <p>Computers are great but</p>
-          <h2 style="margin-bottom: 0.15em;"><em>You need people</em></h2>
+          <h2 style="margin-bottom: 0.15em;"><em>You also need people</em></h2>
           <p style="margin: 0 0 1em;">To test your sites</p>
           <figure>
             <img src="img/waynes-world-pizza-hut.gif" alt="Waynes World fake Pizza Hut commercial scene" style="min-height: 400px;">

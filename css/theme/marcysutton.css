@@ -552,8 +552,7 @@ body {
     text-align: center;
     width: 100%; }
   .reveal .layeredFragments img {
-    min-height: 400px;
-    width: 780px; }
+    min-height: 400px; }
 .reveal .definition {
   margin: 0 auto; }
   .reveal .definition p {
