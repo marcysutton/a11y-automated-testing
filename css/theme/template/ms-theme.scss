@@ -131,6 +131,10 @@ body {
     word-wrap: break-word;
     box-shadow: 0 0 6px rgba(0,0,0,.3);
 
+    &.smaller {
+      font-size: .455em;
+    }
+
     code, & > div {
       background-color: $codeBackgroundColor;
       color: $tertiaryColor;
@@ -181,6 +185,10 @@ body {
     opacity: 1;
     transition: opacity 0.5s;
     z-index: 11;
+
+    * {
+      text-shadow: none;
+    }
 
     .title-slide & {
       opacity: 0;
@@ -234,9 +242,14 @@ body {
   	letter-spacing: $headingLetterSpacing;
     margin: $headingMargin;
   	text-transform: $headingTextTransform;
+    text-shadow: $paragraphTextShadow;
+  }
+  section {
+    p, small, ul, ol, div.large-tag, figcaption, blockquote, dd, dt {
+      text-shadow: $paragraphTextShadow;
+    }
   }
   p, small, ul, ol, div.large-tag, figcaption, blockquote, dd, dt {
-    // text-shadow: $paragraphTextShadow;
     line-height: 1.5;
   }
   h1, h2.h1-style, h3.h1-style {
@@ -277,6 +290,10 @@ body {
   em {
     font-style: italic;
     font-weight: 400;
+  }
+  .fancyEmphasis {
+    font-family: $mainFont;
+    font-style: italic;
   }
   blockquote {
     box-shadow: none;
@@ -513,23 +530,17 @@ body {
  *********************************************/
 
 .reveal {
-  a:not(.image), .highlight {
-    border: 1px solid transparent;
+  a, .highlight {
+    outline: 2px solid transparent;
   	color: $linkColor;
   	text-decoration: none;
-
-  	-webkit-transition: all .5s;
-  	   -moz-transition: all .5s;
-  	    -ms-transition: all .5s;
-  	     -o-transition: all .5s;
-  	        transition: all .5s;
+    transition: all .5s;
   }
-	a:not(.image):hover,
+  a:not(.image):hover,
   a:not(.image):focus,
   button:focus {
-    // border: 1px dotted $mainColor;
 		color: $linkColorHover;
-    outline: 1px dotted $mainColor;
+    outline: 2px dotted $mainColor;
 	}
 
   .roll span:after {
@@ -744,6 +755,24 @@ body {
  * Slide Styles
  *********************************************/
 .reveal {
+  .terminal {
+    font-size: $terminalFontSize !important;
+    font-family: $terminalFontFamily !important;
+  }
+  .layeredFragments {
+    position: relative;
+
+    .fragment {
+      position: absolute; 
+      top: 0; 
+      text-align: center; 
+      width: 100%;
+    }
+    img {
+      min-height: 400px;
+      width: 780px;
+    }
+  }
   .definition {
     margin: 0 auto;
 
@@ -894,26 +923,24 @@ body {
   .image-headline {
     border: 4px solid $mainColor;
     margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    max-width: 800px;
+    margin: 0.5em auto 0;
+    padding-top: 38%;
+    position: relative;
 
-    &#lemur {
-      background: transparent url(../../img/lemur.jpg) no-repeat center top;
-      background-size: 100% auto;
-      max-width: 600px;
-      margin: 0.5em auto 0;
-      padding-top: 35%;
-      position: relative;
-
-      h2, h3 {
-        color: #000;
-        font-size: 2.5em;
-        text-shadow: 2px 2px 3px #fff;
-      }
-    }
     h2, h3 {
       bottom: 0;
       position: absolute;
       text-align: center;
       width: 100%;
+    }
+    &.black-caption {
+      h3 {
+        background-color: #000;
+        margin: 0;
+      }
     }
   }
 }

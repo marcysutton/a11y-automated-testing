@@ -69,7 +69,7 @@
             <li class="fragment">Need actual text</li>
             <li class="fragment">Navigate with a keyboard only</li>
             <li class="fragment">Don't know what your icons mean</li>
-            <li class="fragment">Are not fans of parallax</li>
+            <li class="fragment">Are over parallax</li>
           </ul>
         </section>
 
@@ -82,6 +82,9 @@
 
         <section>
           <h2>Let tooling to do some heavy lifting for you.</h2>
+          <aside class="notes">
+            As far as diagnosing low-hanging fruit. Not a substitute for user testing.
+          </aside>
         </section>
 
         <section>
@@ -92,6 +95,14 @@
             <li>Definitely Automated Testing</li>
           </ul>
         </section>
+        
+        <section>
+          <h2 class="h3-style">But automating&rsquo;s no substitute for...</h2>
+          <div class="image-headline black-caption" style="background-image: url(img/grinds-my-gears.jpg);">
+            <h3 class="h2-style">real user feedback</h3>
+          </div>
+          <p style="margin-top: 0.25em;"><small><em>* Preferably with people with disabilities</em></small></p>
+        </section>
 
         <section>
           <h2>Technologies <small>1/2</small></h2>
@@ -101,19 +112,19 @@
             <li><a href="https://www.virtualbox.org/">VirtualBox</a> and <a href="https://www.modern.ie/en-us/virtualization-tools">Modern.IE</a></li>
             <li>IE and <a href="http://www.freedomscientific.com/Downloads/JAWS">JAWS</a></li>
             <li>Firefox and <a href="http://www.nvaccess.org/">NVDA</a></li>
-            <li>Chrome</li>
             <li></li>
           </ul>
+          –
+          <p><a href="http://webaim.org/projects/screenreadersurvey5/">WebAIM Screen Reader Survey</a></p>
         </section>
 
         <section>
           <h2>Technologies <small>2/2</small></h2>
-          <h3>OSX &amp; Mobile</h3>
           <div class="separator inset-width"><hr></div>
           <ul>
-            <li class="bottom-space">Safari <br> Voiceover for Desktop and iOS</li>
-            <li class="bottom-space">Firefox <br> Desktop, Android with TalkBack</li>
-            <li>Chrome</li>
+            <li class="bottom-space">Safari &amp; Voiceover<br> OSX and iOS</li>
+            <li class="bottom-space">Firefox Desktop<br>Firefox with Android TalkBack</li>
+            <li>Chrome Desktop</li>
           </ul>
         </section>
 
@@ -140,7 +151,7 @@
             <div>
               <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
             </div>
-            <div class="fragment" style="position:absolute; top: 0; text-align: center; width: 100%;">
+            <div class="fragment absolute">
               <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
             </div>
             <figcaption>Firefox Web Developer Toolbar</figcaption>
@@ -148,7 +159,7 @@
         </section>
 
         <section>
-          <h2 class="h3-style">Overall Page Health</h2>
+          <h2 class="h3-style">Overall Page A11Y</h2>
           <h3 class="h4-style">Chrome Accessibility Developer Tools</h3>
           <a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en"
              class="image"
@@ -203,28 +214,62 @@
         </section>
 
         <section>
+          <h2 class="offscreen">A11y Command-Line Demo</h2>
           <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
         </section>
 
         <section>
-          <h2><a href="https://github.com/angular/protractor/blob/master/docs/plugins.md" class="image"><img src="img/protractor-logo-white.png" alt="Protractor for AngularJS" class="plain"></a></h2>
-          <h3>Accessibility Plugin</h3>
-
-        </section>
-
-        <section>
-          <h2>Protractor<br>
-            Accessibility Plugin</h2>
-          <h3>Test for:</h3>
+          <h2>Ways to Integrate</h2>
           <ul>
-            <li>Focus management</li>
-            <li>Color contrast</li>
-            <li>Missing labels</li>
-            <li>Incorrect ARIA</li>
+            <li>Run on save</li>
+            <li>Run on commit</li>
+            <li>Run on deploy</li>
           </ul>
         </section>
 
         <section>
+          <h2><img src="img/protractor-logo-white.png" alt="Protractor for AngularJS" class="plain"></h2>
+          <h3>Accessibility Plugin</h3>
+          <p><a href="https://github.com/angular/protractor/blob/master/docs/plugins.md">Documentation on Github</a></p>
+        </section>
+
+        <section>
+          <h2>Protractor</h2>
+          <div class="separator inset-width-smaller" style="margin-bottom: 1em;"><hr></div>
+          <h3 class="h4-style"><em>Test for:</em></h3>
+          <ul>
+            <li>Focus management</li>
+            <li>Color contrast</li>
+            <li>Missing labels</li>
+            <li>Incorrect ARIA attributes</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2 class="h3-style">Write some tests, run some audits</h2>
+          <figure class="full-screen-code">
+          <pre class="smaller"><code class="javascript">
+ describe('signups', function() {
+  it('should navigate to the signup form', function() {
+    browser.get('http://bring.pizza');
+    expect($('#title').getText()).toMatch('Pizza As a Service');
+
+    // click on signup button
+    element(by.css('button.signup')).click();
+
+    // verify focus was sent to first input field in view
+    element.all(by.css('input.first')).then(function(items) {
+      expect(items[0].getAttribute('id')).toEqual(browser.driver.switchTo().activeElement().getAttribute('id'));
+    });
+          </code></pre>
+          </figure>
+        </section>
+
+        <section>
+          <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" style="width: 100%;" class="plain">
+        </section>
+
+        <!--<section>
           <h2>Unit Tests for A11y</h2>
           <ul>
             <li>Radio buttons: semantics, keyboard access</li>
@@ -234,10 +279,29 @@
 
         <section>
           <h2>React a11y</h2>
+        </section>-->
+      
+        <section>
+          <p>Computers are great but</p>
+          <h2 style="margin-bottom: 0.15em;"><em>You need people</em></h2>
+          <p style="margin: 0 0 1em;">To test your sites</p>
+          <figure>
+            <img src="img/waynes-world-pizza-hut.gif" alt="Waynes World fake Pizza Hut commercial scene" style="min-height: 400px;">
+          </figure>
         </section>
 
+        <section>
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="http://www.usertesting.com/blog/2014/03/04/the-value-of-involving-people-with-disabilities-in-user-research/">Including People with Disabilities in User Research</a></li>
+            <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/">How I Audit a Website for Accessibility</a></li>
+            <li><a href="http://www.w3.org/WAI/ER/tools/">Web Accessibility Evaluation Tools</a></li>
+            <li><a href="http://www.smashingmagazine.com/2015/05/06/client-rendered-accessibility/">Notes on Client-Rendered Accessibility</a></li>
+            <li><a href="https://www.marcozehe.de/2014/03/27/what-is-wai-aria-what-does-it-do-for-me-and-what-not/">What is ARIA?</a></li>
+          </ul>
+        </section>
 
-        <section data-title="The end">
+        <section>
           <h2>The End.</h2>
         </section>
 			</div>

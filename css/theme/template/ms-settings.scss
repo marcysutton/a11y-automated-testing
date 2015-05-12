@@ -6,7 +6,7 @@ $backgroundColor: #000;
 
 // Primary/body text
 $mainFont: 'RobotoDraft', sans-serif;
-$secondaryFont: 'Lato', sans-serif;
+$secondaryFont: 'Allan', cursive;
 $codeFont: Menlo, monospace;
 $mainFontSize: 36px;
 
@@ -36,13 +36,16 @@ $paragraphLineHeight: 1.25em;
 
 // Links and actions
 $linkColor: #E3C402;
-$linkColorHover: #ED4B40;
+$linkColorHover: #fff;
 $altLinkColor: #55491F;
 $buttonColor: #4285f4;
 $buttonTextColor: $white;
 
-$separatorColor: darken($mainColor, 50%);
-$separatorHeight: 4px;
+$separatorColor: darken($mainColor, 20%);
+$separatorHeight: 3px;
+
+$terminalFontSize: 17px;
+$terminalFontFamily: $codeFont, monospace;
 
 // Text selection
 $selectionBackgroundColor: #97948f;
