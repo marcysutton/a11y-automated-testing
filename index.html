@@ -147,11 +147,11 @@
         <section>
           <h2 class="h3-style" style="margin-bottom:0">Headings &amp; Semantic Structure</h2>
           <p style="margin-bottom:0.5em"><a href="http://webaim.org/techniques/semanticstructure/" title="Semantic Structure">More from WebAIM</a></p>
-          <figure style="position: relative;">
+          <figure class="layeredFragments">
             <div>
               <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
             </div>
-            <div class="fragment absolute">
+            <div class="fragment">
               <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
             </div>
             <figcaption>Firefox Web Developer Toolbar</figcaption>
@@ -203,10 +203,8 @@
       var a11y = require('a11y');
 
       a11y('cnn.com', function (err, reports) {
-          var output = JSON.parse(reports);
-
-          // a11y Formatted report
-          var audit = output.audit;
+        var audit = reports.audit;
+        console.log(audit);
       });
               </code></pre>
             </div>
