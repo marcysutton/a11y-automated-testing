@@ -69,8 +69,19 @@
             <li class="fragment">Need actual text</li>
             <li class="fragment">Navigate with a keyboard only</li>
             <li class="fragment">Don't know what your icons mean</li>
-            <li class="fragment">Are over parallax</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Accessibility Basics</h2>
+          <ul>
+            <li>Alternative text</li>
+            <li>Document structure &amp; hierarchy</li>
+            <li>HTML semantics</li>
+            <li>Interactivity</li>
+            <li>Color contrast</li>
+          </ul>
+          <p><a href="http://webaim.org/intro/#principles">More Principles</a></p>
         </section>
 
         <section>
@@ -109,20 +120,17 @@
           <h3>Windows</h3>
           <div class="separator inset-width"><hr></div>
           <ul>
-            <li><a href="https://www.virtualbox.org/">VirtualBox</a> and <a href="https://www.modern.ie/en-us/virtualization-tools">Modern.IE</a></li>
-            <li>IE and <a href="http://www.freedomscientific.com/Downloads/JAWS">JAWS</a></li>
-            <li>Firefox and <a href="http://www.nvaccess.org/">NVDA</a></li>
-            <li></li>
+            <li class="bottom-space"><a href="https://www.virtualbox.org/">VirtualBox</a> and <a href="https://www.modern.ie/en-us/virtualization-tools">Modern.IE</a></li>
+            <li class="bottom-space">IE and <a href="http://www.freedomscientific.com/Downloads/JAWS">JAWS</a></li>
+            <li class="bottom-space">Firefox and <a href="http://www.nvaccess.org/">NVDA</a></li>
           </ul>
-          –
-          <p><a href="http://webaim.org/projects/screenreadersurvey5/">WebAIM Screen Reader Survey</a></p>
         </section>
 
         <section>
           <h2>Technologies <small>2/2</small></h2>
           <div class="separator inset-width"><hr></div>
           <ul>
-            <li class="bottom-space">Safari &amp; Voiceover<br> OSX and iOS</li>
+            <li class="bottom-space">Safari and Voiceover<br> OSX and iOS</li>
             <li class="bottom-space">Firefox Desktop<br>Firefox with Android TalkBack</li>
             <li>Chrome Desktop</li>
           </ul>
@@ -146,30 +154,33 @@
 
         <section>
           <h2 class="h3-style" style="margin-bottom:0">Headings &amp; Semantic Structure</h2>
-          <p style="margin-bottom:0.5em"><a href="http://webaim.org/techniques/semanticstructure/" title="Semantic Structure">More from WebAIM</a></p>
-          <figure class="layeredFragments">
-            <div>
-              <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
+          <figure>
+            <figcaption><a href="https://addons.mozilla.org/en-US/firefox/addon/web-developer/">Firefox Web Developer Toolbar</a></figcaption>
+            <div class="layeredFragments">
+              <div>
+                <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
+              </div>
+              <div class="fragment">
+                <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
+              </div>
             </div>
-            <div class="fragment">
-              <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
-            </div>
-            <figcaption>Firefox Web Developer Toolbar</figcaption>
+          </figure>
+          <p style="margin-bottom:0.5em"><small><a href="http://webaim.org/techniques/semanticstructure/">Semantic Structure from WebAIM</a></small></p>
+        </section>
+
+        <section>
+          <h2 class="h3-style" style="margin-bottom:0">Overall Page A11Y</h2>
+          <figure>
+            <figcaption><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en"
+               class="image" title="Install Chrome Extension">
+               Chrome Accessibility Developer Tools</a>
+            </figcaption>
+            <img src="img/chrome-a11y-extension.jpg" alt="Chrome Extension">
           </figure>
         </section>
 
         <section>
-          <h2 class="h3-style">Overall Page A11Y</h2>
-          <h3 class="h4-style">Chrome Accessibility Developer Tools</h3>
-          <a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en"
-             class="image"
-             title="Install Chrome Extension">
-            <img src="img/chrome-a11y-extension.jpg" alt="Chrome Extension">
-          </a>
-        </section>
-
-        <section>
-          <h2>Let's run an audit</h2>
+          <h2>Let's bake an audit</h2>
           <h3><a href="http://www.cnn.com/" title="CNN.com">Demo</a></h3>
         </section>
 
@@ -195,7 +206,7 @@
         <section>
           <h2 style="margin: 0;">
             <a href="http://addyosmani.github.io/a11y/" class="image">
-              <img src="img/a11y-addy-osmani.png" alt="" class="plain whiteBg" style="max-height: 160px;"></a></h2>
+              <img src="img/a11y-addy-osmani.png" alt="A11y by Addy Osmani" class="plain whiteBg" style="max-height: 160px;"></a></h2>
           <p style="margin: 0;">by Addy Osmani</p>
           <figure>
             <div class="">
@@ -218,11 +229,15 @@
             <li>Run on commit</li>
             <li>Run on deploy</li>
           </ul>
+          <aside class="notes">
+            Use on localhost instead of hitting remote URL, add to a task runner, etc.
+            Grunt-a11y, CI servers
+          </aside>
         </section>
 
         <section>
           <h2><img src="img/protractor-logo-white.png" alt="Protractor for AngularJS" class="plain"></h2>
-          <h3>Accessibility Plugin</h3>
+          <h3>+ Accessibility Plugin</h3>
           <p><a href="https://github.com/angular/protractor/blob/master/docs/plugins.md">Documentation on Github</a></p>
         </section>
 
@@ -251,7 +266,7 @@
         </section>
         
         <section>
-          <h2 class="h3-style">Write some tests, run some audits</h2>
+          <h2 class="h3-style">Write some tests, deliver some audits</h2>
           <figure class="full-screen-code">
           <pre class="smaller"><code class="javascript">
  describe('material start', function() {
@@ -301,9 +316,11 @@
           <h2>Resources</h2>
           <ul>
             <li><a href="http://www.usertesting.com/blog/2014/03/04/the-value-of-involving-people-with-disabilities-in-user-research/">Including People with Disabilities in User Research</a></li>
+            <li><a href="http://www-03.ibm.com/able/resources/userevaluations.html">Conducting User Evaluations</a></li>
             <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/">How I Audit a Website for Accessibility</a></li>
             <li><a href="http://www.w3.org/WAI/ER/tools/">Web Accessibility Evaluation Tools</a></li>
             <li><a href="http://www.smashingmagazine.com/2015/05/06/client-rendered-accessibility/">Notes on Client-Rendered Accessibility</a></li>
+            <li><a href="http://ebaim.org/projects/screenreadersurvey5/">WebAIM Screen Reader Survey</a></li>
             <li><a href="https://www.marcozehe.de/2014/03/27/what-is-wai-aria-what-does-it-do-for-me-and-what-not/">What is ARIA?</a></li>
           </ul>
         </section>
