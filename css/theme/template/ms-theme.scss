@@ -173,6 +173,25 @@ body {
       background-color: rgba(0,0,0,0.75);
     }
   }
+  [role=checkbox] {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 1em;
+    
+    &:before {
+      content: '\2610';
+      display: inline-block;
+      font-size: 2em;
+      line-height: 1;
+      vertical-align: middle;
+    }
+    &[aria-checked="true"]:before {
+      content: '\2611';
+    }
+  }
+  .showAttrs {
+    font-size: 1.5em;
+  }
   footer {
     bottom: 0px;
     left: 0;
@@ -787,7 +806,7 @@ body {
     background-color: $separatorColor;
     height: $separatorHeight;
     line-height: $separatorHeight;
-    margin: 1em auto 0;
+    margin: 1em auto;
 
     hr {
       opacity: 0;
