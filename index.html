@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/monokai_sublime.css">
 
 		<!--<script src="lib/js/jquery-1.11.1.min.js"></script>-->
 
@@ -61,7 +61,7 @@
           </aside>
         </section>
 
-        <section>
+        <!--<section>
           <h2>People</h2>
           <ul>
             <li>Have vision impairments</li>
@@ -69,8 +69,20 @@
             <li class="fragment">Need actual text</li>
             <li class="fragment">Navigate with a keyboard only</li>
             <li class="fragment">Don't know what your icons mean</li>
-            <li class="fragment">Are over parallax</li>
           </ul>
+        </section>-->
+
+        <section>
+          <h2>Accessibility Basics</h2>
+          <ul>
+            <li>Alternative text</li>
+            <li>Document structure &amp; hierarchy</li>
+            <li>HTML semantics</li>
+            <li>Keyboard interactivity</li>
+            <li>Color contrast</li>
+            <li>Focus management</li>
+          </ul>
+          <p><a href="http://webaim.org/intro/#principles">More principles</a></p>
         </section>
 
         <section>
@@ -101,7 +113,7 @@
           <div class="image-headline black-caption" style="background-image: url(img/grinds-my-gears.jpg);">
             <h3 class="h2-style">real user feedback</h3>
           </div>
-          <p style="margin-top: 0.25em;"><small><em>* Preferably with people with disabilities</em></small></p>
+          <p style="margin-top: 0.25em;"><small><em>* Inclusive of people with disabilities</em></small></p>
         </section>
 
         <section>
@@ -109,20 +121,17 @@
           <h3>Windows</h3>
           <div class="separator inset-width"><hr></div>
           <ul>
-            <li><a href="https://www.virtualbox.org/">VirtualBox</a> and <a href="https://www.modern.ie/en-us/virtualization-tools">Modern.IE</a></li>
-            <li>IE and <a href="http://www.freedomscientific.com/Downloads/JAWS">JAWS</a></li>
-            <li>Firefox and <a href="http://www.nvaccess.org/">NVDA</a></li>
-            <li></li>
+            <li class="bottom-space"><a href="https://www.virtualbox.org/">VirtualBox</a> and <a href="https://www.modern.ie/en-us/virtualization-tools">Modern.IE</a></li>
+            <li class="bottom-space">IE and <a href="http://www.freedomscientific.com/Downloads/JAWS">JAWS</a></li>
+            <li class="bottom-space">Firefox and <a href="http://www.nvaccess.org/">NVDA</a></li>
           </ul>
-          –
-          <p><a href="http://webaim.org/projects/screenreadersurvey5/">WebAIM Screen Reader Survey</a></p>
         </section>
 
         <section>
           <h2>Technologies <small>2/2</small></h2>
           <div class="separator inset-width"><hr></div>
           <ul>
-            <li class="bottom-space">Safari &amp; Voiceover<br> OSX and iOS</li>
+            <li class="bottom-space">Safari and Voiceover<br> OSX and iOS</li>
             <li class="bottom-space">Firefox Desktop<br>Firefox with Android TalkBack</li>
             <li>Chrome Desktop</li>
           </ul>
@@ -131,13 +140,13 @@
         <section>
           <h2 class="h3-style">First thing I do:</h2>
           <h3 class="h2-style">Tab through a page with <br>the keyboard</h3>
-          <h4><a href="https://www.gov.uk/" title="GOV.UK">Demo</a></h4>
+          <h4><a href="https://www.gov.uk/" target="_blank" title="GOV.UK opens in a new window">Demo: GOV.UK</a></h4>
         </section>
 
         <section>
           <h2 class="h3-style">Next thing:</h2>
           <h3 class="h2-style">Use a screen reader</h3>
-          <h4><a href="https://soundcloud.com/" title="Soundcloud">Demo</a></h4>
+          <!--<h4><a href="https://soundcloud.com/" target="_blank" title="Soundcloud opens in a new window">Demo: Soundcloud</a></h4>-->
         </section>
 
         <section>
@@ -146,31 +155,34 @@
 
         <section>
           <h2 class="h3-style" style="margin-bottom:0">Headings &amp; Semantic Structure</h2>
-          <p style="margin-bottom:0.5em"><a href="http://webaim.org/techniques/semanticstructure/" title="Semantic Structure">More from WebAIM</a></p>
-          <figure style="position: relative;">
-            <div>
-              <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
+          <figure>
+            <figcaption><a href="https://addons.mozilla.org/en-US/firefox/addon/web-developer/">Firefox Web Developer Toolbar</a></figcaption>
+            <div class="layeredFragments">
+              <div>
+                <img src="img/firefox-toolbar-navigate.png" alt="Navigating to Information, View Document Outline in Firefox">
+              </div>
+              <div class="fragment">
+                <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
+              </div>
             </div>
-            <div class="fragment absolute">
-              <img src="img/firefox-toolbar-outline.png" alt="Heading structure output from Accessibility Wins">
-            </div>
-            <figcaption>Firefox Web Developer Toolbar</figcaption>
+          </figure>
+          <p style="margin-bottom:0.5em"><small><a href="http://webaim.org/techniques/semanticstructure/">Semantic Structure from WebAIM</a></small></p>
+        </section>
+
+        <section>
+          <h2 class="h3-style" style="margin-bottom:0">Overall Page A11Y</h2>
+          <figure>
+            <figcaption><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en"
+               class="image" title="Install Chrome Extension">
+               Chrome Accessibility Developer Tools</a>
+            </figcaption>
+            <img src="img/chrome-a11y-extension.jpg" alt="Chrome Extension">
           </figure>
         </section>
 
         <section>
-          <h2 class="h3-style">Overall Page A11Y</h2>
-          <h3 class="h4-style">Chrome Accessibility Developer Tools</h3>
-          <a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en"
-             class="image"
-             title="Install Chrome Extension">
-            <img src="img/chrome-a11y-extension.jpg" alt="Chrome Extension">
-          </a>
-        </section>
-
-        <section>
-          <h2>Let's run an audit</h2>
-          <h3><a href="http://www.cnn.com/" title="CNN.com">Demo</a></h3>
+          <h2>Let's do an audit</h2>
+          <h3><a href="http://www.cnn.com/" title="CNN.com opens in a new window" target="_blank">Demo: CNN.com</a></h3>
         </section>
 
         <section>
@@ -195,7 +207,7 @@
         <section>
           <h2 style="margin: 0;">
             <a href="http://addyosmani.github.io/a11y/" class="image">
-              <img src="img/a11y-addy-osmani.png" alt="" class="plain whiteBg" style="max-height: 160px;"></a></h2>
+              <img src="img/a11y-addy-osmani.png" alt="A11y by Addy Osmani" class="plain whiteBg" style="max-height: 160px;"></a></h2>
           <p style="margin: 0;">by Addy Osmani</p>
           <figure>
             <div class="">
@@ -203,10 +215,8 @@
       var a11y = require('a11y');
 
       a11y('cnn.com', function (err, reports) {
-          var output = JSON.parse(reports);
-
-          // a11y Formatted report
-          var audit = output.audit;
+        var report = reports.report;
+        console.log(report);
       });
               </code></pre>
             </div>
@@ -214,7 +224,7 @@
         </section>
 
         <section>
-          <h2 class="offscreen">A11y Command-Line Demo</h2>
+          <h2 class="h4-style">A11y Command-Line Demo</h2>
           <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
         </section>
 
@@ -225,12 +235,16 @@
             <li>Run on commit</li>
             <li>Run on deploy</li>
           </ul>
+          <aside class="notes">
+            Use on localhost instead of hitting remote URL, add to a task runner, etc.
+            Grunt-a11y, CI servers
+          </aside>
         </section>
 
         <section>
           <h2><img src="img/protractor-logo-white.png" alt="Protractor for AngularJS" class="plain"></h2>
-          <h3>Accessibility Plugin</h3>
-          <p><a href="https://github.com/angular/protractor/blob/master/docs/plugins.md">Documentation on Github</a></p>
+          <h3>+ Accessibility Plugin</h3>
+          <p><a href="https://github.com/angular/protractor/blob/master/docs/plugins.md" target="_blank" title="Link opens in a new window">Documentation on Github</a></p>
         </section>
 
         <section>
@@ -244,49 +258,168 @@
             <li>Incorrect ARIA attributes</li>
           </ul>
         </section>
+
+        <section data-state="title-slide">
+          <h2 class="h4-style"><a href="https://github.com/angular/material-start" target="_blank" title="Link opens in a new window">Angular Material Start</a></h2>
+          <figure class="layeredFragments">
+            <div>
+              <img src="img/angular-material-start.png" alt="Demo app running on localhost" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-sublime.png" alt="Protractor config file open in Sublime Text" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-packagejson.png" alt="Project package.json file open in Sublime Text" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-packagejson-highlight.png" alt="Project package.json with test line highlighted" class="plain">
+            </div>
+          </figure>
+        </section>
         
         <section>
-          <h2 class="h3-style">Write some tests, run some audits</h2>
+          <h2 class="h3-style">Write some tests, deliver some audits</h2>
           <figure class="full-screen-code">
           <pre class="smaller"><code class="javascript">
- describe('signups', function() {
-  it('should navigate to the signup form', function() {
-    browser.get('http://bring.pizza');
-    expect($('#title').getText()).toMatch('Pizza As a Service');
+ describe('bottom sheet view', function() {
+  beforeEach(function() {
+    // click on share button
+    element(by.css('button.share')).click();
+  });
 
-    // click on signup button
-    element(by.css('button.signup')).click();
-
-    // verify focus was sent to first input field in view
-    element.all(by.css('input.first')).then(function(items) {
-      expect(items[0].getAttribute('id')).toEqual(browser.driver.switchTo().activeElement().getAttribute('id'));
+  it('should focus on the first item', function() {
+    // verify focus was sent into bottom sheet
+    element.all(by.css('[ng-click="vm.performAction(item)"]'))
+      .then(function(items) {
+        expect(items[0].getAttribute('id'))
+          .toEqual(browser.driver.switchTo().activeElement().getAttribute('id'));
     });
           </code></pre>
           </figure>
         </section>
 
         <section>
-          <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" style="width: 100%;" class="plain">
+          <h2 class="h3-style">Bonus: Chrome A11y Developer Tools</h2>
+          <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" class="plain">
+        </section>
+
+        <section>
+          <h2>Let's fix those failures</h2>
+          <p><em class="muted">Open in Sublime</em></p>
+        </section>
+
+        <section>
+          <h2 class="h4-style">Run Protractor Tests</h2>
+          <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
+        </section>
+
+        <section>
+          <h2>End-to-End <br>
+              vs.<br>
+              Unit Testing</h2>
+          <h3 class="h4-style"><em>Parts of the development workflow</em></h3>
+        </section>
+
+        <section>
+          <h2>Unit Testing for Accessibility</h2>
+          <h3><em>Opportunities:</em></h3>
+          <ul>
+            <li>Watched ARIA properties</li>
+            <li>Keyboard operability</li>
+            <li>Text alternatives</li>
+            <li>Semantics</li>
+          </ul>
         </section>
 
         <!--<section>
-          <h2>Unit Tests for A11y</h2>
+          <h2>Unit Test Example</h2>
+          <figure class="full-screen-code">
+          <pre><code class="javascript">
+  it ('should create an ARIA label if one is missing', inject(function($mdDialog, $rootScope) {
+    var parent = angular.element('&lt;div&gt;');
+    $mdDialog.show({
+      template: '<md-dialog>Hello</md-dialog>',
+      parent: parent
+    });
+    parent.find('md-dialog-container').triggerHandler('transitionend');
+    $rootScope.$apply();
+
+    var dialog = parent.find('md-dialog');
+    expect(dialog.attr('aria-label')).toEqual(dialog.text());
+  }));
+          </code></pre>
+          <figcaption><a href="https://github.com/angular/material/blob/master/src/components/dialog/dialog.spec.js#L488">ngMaterial Dialog</a></figcaption>
+          </figure>
+        </section>-->
+
+        <section>
+          <h2>Example: ngAria</h2>
+          <div ng-app="app">
+            <some-checkbox role="checkbox" show-attrs ng-model="checked" ng-checked="checked">
+              &lt;some-checkbox&gt; custom element 
+            </some-checkbox>
+            <figure>
+              <attr-output>
+                <pre><code class="json"></code></pre>
+              </attr-output><figcaption>Attributes rendered</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="h3-style">ngAria Unit Tests</h2>
+          <figure class="full-screen-code">
+          <pre><code class="javascript">
+  ddescribe('aria-checked', function() {
+    beforeEach(injectScopeAndCompiler);
+
+    it('should not attach itself to input type="checkbox"', function() {
+      compileElement('<input type="checkbox" ng-model="val">');
+
+      expect(element.attr('aria-checked')).toBeUndefined();
+    });
+
+    it('should attach itself to custom checkbox', function() {
+      compileElement('<md-checkbox role="checkbox" ng-model="val"></md-checkbox>');
+
+      scope.$apply('val = true');
+      expect(element.attr('aria-checked')).toBe('true');
+
+      scope.$apply('val = false');
+      expect(element.attr('aria-checked')).toBe('false');
+    });
+  });
+        </code></pre>
+          <figcaption><a href="https://github.com/angular/angular.js/blob/master/test/ngAria/ariaSpec.js">Angular.js ngAria (refactor)</a></figcaption>
+        </figure>
+        </section>
+
+        <!--<section>
+          <h2 class="h4-style">Let's run a test</h2>
+          <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
+        </section>-->
+
+        <section>
+          <h2 class="h3-style">Automated Accessibility Testing,<br>
+            <em>delivered</em></h2>
+            <div class="separator inset-width-smaller"><hr></div>
           <ul>
-            <li>Radio buttons: semantics, keyboard access</li>
-            <li>Labeling</li>
+            <li><em>Manual:</em> <br>
+            Keyboard, screen reader</li>
+            <li class="fragment"><em>Sorta automated:</em><br> 
+              Firefox Web Developer Toolbar<br> 
+              Chrome Accessibility Developer Tools</li>
+            <li class="fragment"><em>Automated:</em><br>
+            End-to-end, Unit testing</li>
           </ul>
         </section>
 
         <section>
-          <h2>React a11y</h2>
-        </section>-->
-      
-        <section>
           <p>Computers are great but</p>
-          <h2 style="margin-bottom: 0.15em;"><em>You need people</em></h2>
+          <h2 style="margin-bottom: 0.15em;"><em>You also need people</em></h2>
           <p style="margin: 0 0 1em;">To test your sites</p>
           <figure>
-            <img src="img/waynes-world-pizza-hut.gif" alt="Waynes World fake Pizza Hut commercial scene" style="min-height: 400px;">
+            <img src="img/waynes-world-pizza-hut-still.gif" alt="Waynes World fake Pizza Hut commercial scene" style="min-height: 400px;">
           </figure>
         </section>
 
@@ -294,9 +427,11 @@
           <h2>Resources</h2>
           <ul>
             <li><a href="http://www.usertesting.com/blog/2014/03/04/the-value-of-involving-people-with-disabilities-in-user-research/">Including People with Disabilities in User Research</a></li>
+            <li><a href="http://www-03.ibm.com/able/resources/userevaluations.html">Conducting User Evaluations</a></li>
             <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/">How I Audit a Website for Accessibility</a></li>
             <li><a href="http://www.w3.org/WAI/ER/tools/">Web Accessibility Evaluation Tools</a></li>
             <li><a href="http://www.smashingmagazine.com/2015/05/06/client-rendered-accessibility/">Notes on Client-Rendered Accessibility</a></li>
+            <li><a href="http://ebaim.org/projects/screenreadersurvey5/">WebAIM Screen Reader Survey</a></li>
             <li><a href="https://www.marcozehe.de/2014/03/27/what-is-wai-aria-what-does-it-do-for-me-and-what-not/">What is ARIA?</a></li>
           </ul>
         </section>
@@ -314,6 +449,8 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-aria.js"></script>
 		<script>
 
 			// Full list of configuration options available here:
@@ -325,7 +462,6 @@
 				center: true,
 
         keyboard: {
-          13: 'next', // go to the next slide when the ENTER key is pressed
           27: function() {} // do something custom when ESC is pressed
         },
 				// The "normal" size of the presentation, aspect ratio will be preserved
@@ -356,5 +492,59 @@
 				]
 			});
 		</script>
+    <script>
+    var app = angular.module('app', ['ngAria'], function($ariaProvider) {
+      $ariaProvider.config({
+        ariaInvalid: false
+      })
+    });
+
+    app.controller('MainCtrl', function MainCtrl($scope) {
+      'use strict';
+
+      $scope.checked = 'false';
+
+      $scope.toggleCheckbox = function() {
+        $scope.checked = !$scope.checked;
+        $scope.$apply();
+      }
+      
+    });
+    app.directive('someCheckbox', function() {
+      return {
+        restrict: 'E',
+        controller: 'MainCtrl',
+        priority: 210,
+        link: function($scope, $element, $attr) {
+          $element.on('click', function($event) {
+            $scope.toggleCheckbox();
+          })
+          .on('keydown', function($event) {
+            if ($event.which === 13 || $event.which === 32) {
+              $scope.toggleCheckbox();
+            }
+          });
+        }
+      }
+    })
+
+    app.directive('showAttrs', function() {
+      return function(scope, el, attrs) {
+        var outputDiv = document.querySelector('attr-output');
+        var pre = outputDiv.querySelector('code');
+        scope.$watch(function() {
+          var attrs = {};
+          Array.prototype.slice.call(el[0].attributes, 0).forEach(function(item) {
+            if (item.name !== 'show-attrs') {
+              attrs[item.name] = item.value;
+            }
+          });
+          return attrs;
+        }, function(newAttrs, oldAttrs) {
+          pre.innerText = JSON.stringify(newAttrs, null, 2);
+        }, true);
+      }
+    });
+    </script>
 	</body>
 </html>

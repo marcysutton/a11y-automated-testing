@@ -111,7 +111,7 @@ module.exports = function(grunt) {
                 termName: "xterm",
                 geometry: [80, 19],
               },
-              cwd: "./demos/terminal",
+              cwd: "./demos/material-start",
               shell: 'bash',
               port: 8080
             });
