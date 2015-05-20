@@ -15,19 +15,17 @@
  *
  * 2014 Marcy Sutton, http://marcysutton.com
  *********************************************/
-.reveal .slides {
-  z-index: 12; }
-  .reveal .slides > section > .accessibilityWrapper, .reveal .slides > section > section > .accessibilityWrapper {
-    display: none;
-    visibility: hidden; }
-  .reveal .slides > section.present > .accessibilityWrapper {
-    display: block;
-    visibility: visible;
-    outline: none; }
-  .reveal .slides > section > .accessibilityWrapper {
-    outline: none; }
-  .reveal .slides.staticPage > section {
-    display: block !important; }
+.reveal .slides > section > .accessibilityWrapper, .reveal .slides > section > section > .accessibilityWrapper {
+  display: none;
+  visibility: hidden; }
+.reveal .slides > section.present > .accessibilityWrapper {
+  display: block;
+  visibility: visible;
+  outline: none; }
+.reveal .slides > section > .accessibilityWrapper {
+  outline: none; }
+.reveal .slides.staticPage > section {
+  display: block !important; }
 .reveal #global-skip-link {
   display: block;
   font-size: 0.6em;

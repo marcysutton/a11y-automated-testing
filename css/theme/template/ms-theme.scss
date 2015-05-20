@@ -16,8 +16,6 @@
  *********************************************/
 .reveal {
   .slides {
-    z-index: 12;
-
     &>section {
       &>.accessibilityWrapper,
       &>section>.accessibilityWrapper {
