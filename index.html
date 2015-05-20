@@ -303,10 +303,12 @@
 
         <section>
           <h2>Unit Testing for Accessibility</h2>
+          <h3><em>Opportunities:</em></h3>
           <ul>
+            <li>Watched ARIA properties</li>
+            <li>Keyboard operability</li>
+            <li>Text alternatives</li>
             <li>Semantics</li>
-            <li>Keyboard access</li>
-            <li>Labeling</li>
           </ul>
         </section>
 
@@ -337,14 +339,16 @@
             <some-checkbox role="checkbox" show-attrs ng-model="checked" ng-checked="checked">
               &lt;some-checkbox&gt; custom element 
             </some-checkbox>
-            <attr-output>
-              <pre><code class="json"></code></pre>
-            </attr-output>
+            <figure>
+              <attr-output>
+                <pre><code class="json"></code></pre>
+              </attr-output><figcaption>Attributes rendered</figcaption>
+            </figure>
           </div>
         </section>
 
         <section>
-          <h2>ngAria Unit Tests</h2>
+          <h2 class="h3-style">ngAria Unit Tests</h2>
           <figure class="full-screen-code">
           <pre><code class="javascript">
   ddescribe('aria-checked', function() {
