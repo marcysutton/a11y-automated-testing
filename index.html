@@ -23,7 +23,7 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/monokai_sublime.css">
 
-		<!--<script src="lib/js/jquery-1.11.1.min.js"></script>-->
+		<script src="lib/js/jquery-1.11.1.min.js"></script>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -41,36 +41,27 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-        <!--<section data-state="title-slide">
-          <img src="img/backgrounds/adventure-time.gif" alt="Psychadelic gif of Finn from Adventure Time dreaming of pizza and eating through his eyeballs sortof">
+        <section data-state="title-slide">
+          <pizza-button role="button" tabindex="0">
+            <img src="img/order_pizza_with_panic_button.jpg" alt="Push button get pizza" style="min-height: 300px; border:0" class="plain">
+          </pizza-button>
           <aside class="notes">I wanted a way to work pizza into this accessibility talk. So let's order a pizza, and I'll teach you how to automate accessibility into your workflow in the time it takes to get here.</aside>
-        </section>-->
+        </section>
 
-				<section data-state="title-slide">
+				<section data-state="title-slide" data-id="start">
           <h1>30 Minutes or Less: <br>
             The Magic of Automated Accessibility Testing</h1>
-					<p>Marcy Sutton, Seattle, WA<br>Developer <a href="http://twitter.com/substantial" target="_blank" title="Link opens in a new window">@Substantial</a>, Angular Core Team Member</p>
-					<p>Slides: <a href="http://marcysutton.com/id24_2015">http://marcysutton.com/id24_2015</a></p>
+					<p>Marcy Sutton, Seattle, WA<br>Accessibility Engineer, Angular Core Team Member</p>
+					<p>Slides: <a href="http://marcysutton.com/jsconf_2015">http://marcysutton.com/jsconf_2015</a></p>
 				</section>
 
         <section>
           <h2>Accessibility is the answer to a more inclusive Web.</h2>
-          <h3><em>(Pizza is also always the answer.)</em></h3>
+          <h3 class="fragment"><em>(Pizza is also always the answer.)</em></h3>
           <aside class="notes">
             Accessibility is about people.
           </aside>
         </section>
-
-        <!--<section>
-          <h2>People</h2>
-          <ul>
-            <li>Have vision impairments</li>
-            <li class="fragment">See colors differently</li>
-            <li class="fragment">Need actual text</li>
-            <li class="fragment">Navigate with a keyboard only</li>
-            <li class="fragment">Don't know what your icons mean</li>
-          </ul>
-        </section>-->
 
         <section>
           <h2>Accessibility Basics</h2>
@@ -162,6 +153,19 @@
         <section>
           <h2>Let's do an audit</h2>
           <h3><a href="http://www.cnn.com/" title="CNN.com opens in a new window" target="_blank">Demo: CNN.com</a></h3>
+          <aside class="notes">
+            Demo in Canary, show accessibility inspector
+            https://groups.google.com/a/chromium.org/forum/#!topic/chromium-accessibility/zmWfzZic9fE
+          </aside>
+        </section>
+
+        <section>
+          <p style="text-transform: uppercase">Concept</p>
+          <h2 class="h3-style">The Accessibility Tree</h2>
+          <img src="img/chrome-accessibility-tree.png" alt="Output from Codepen video player demo in Chrome's Accessibility tree">
+          <p>
+            <small><a href="http://www.paciellogroup.com/blog/2015/01/the-browser-accessibility-tree/" title="The Browser Accessibility Tree">Post from The Paciello Group</a></small>
+          </p>
         </section>
 
         <section>
@@ -277,7 +281,9 @@
         </section>
 
         <section>
-          <h2 class="h3-style">Bonus: Chrome A11y Developer Tools</h2>
+          <h2 class="h3-style" style="margin-bottom:0"><a href="http://angular.github.io/protractor/#/plugins">Protractor Accessibility Plugin</a></h2>
+          <p><em>Runs your tests against</em></p>
+          <h3 class="h4-style">Chrome A11y Developer Tools &amp; Tenon API</h3>
           <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" class="plain">
         </section>
 
@@ -295,6 +301,9 @@
             <li>Text alternatives</li>
             <li>Semantics</li>
           </ul>
+          <aside class="notes">
+            Crustiness
+          </aside>
         </section>
 
         <section>
@@ -315,41 +324,37 @@
           <h2 class="h3-style">ngAria Unit Tests</h2>
           <figure class="full-screen-code">
           <pre><code class="javascript">
-  ddescribe('aria-checked', function() {
+  ddescribe('tabindex', function() {
     beforeEach(injectScopeAndCompiler);
 
-    it('should not attach itself to input type="checkbox"', function() {
-      compileElement('<input type="checkbox" ng-model="val">');
-
-      expect(element.attr('aria-checked')).toBeUndefined();
+    it('should not attach to native controls', function() {
+      compileElement("<button ng-click='something'></button>");
+      expectAriaAttrOnEachElement(element, 'tabindex', undefined);
     });
 
-    it('should attach itself to custom checkbox', function() {
-      compileElement('<md-checkbox role="checkbox" ng-model="val"></md-checkbox>');
+    it('should attach tabindex to custom inputs', function() {
+      compileElement('<div type="checkbox" ng-model="val"></div>');
+      expect(element.attr('tabindex')).toBe('0');
 
-      scope.$apply('val = true');
-      expect(element.attr('aria-checked')).toBe('true');
-
-      scope.$apply('val = false');
-      expect(element.attr('aria-checked')).toBe('false');
+      compileElement('<div role="checkbox" ng-model="val"></div>');
+      expect(element.attr('tabindex')).toBe('0');
     });
-  });
+
+    it('should attach to ng-click', function() {
+      compileElement('<div ng-click="someAction()"></div>');
+    });
+    ...
         </code></pre>
           <figcaption><a href="https://github.com/angular/angular.js/blob/master/test/ngAria/ariaSpec.js">Angular.js ngAria (refactor)</a></figcaption>
         </figure>
         </section>
-
-        <!--<section>
-          <h2 class="h4-style">Let's run a test</h2>
-          <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
-        </section>-->
 
         <section>
           <h2>Accessibility Testing,<br>
             <em>delivered</em></h2>
             <div class="separator inset-width-smaller"><hr></div>
           <ul>
-            <li><em>Manual:</em> <br>
+            <li class="fragment"><em>Manual:</em> <br>
             Keyboard, screen reader</li>
             <li class="fragment"><em>Sorta automated:</em><br>
               Firefox Web Developer Toolbar<br>
@@ -382,13 +387,18 @@
         </section>
 
         <section>
-          <h2>The End.</h2>
+          <h2>Let's eat.</h2>
+          <img src="img/beyonce-pizza.gif" alt="Beyonce dance move to reveal a pizza" style="min-height: 400px;">
         </section>
 			</div>
+      
+      <div class="timerApp">
+        <time class="pizza">30:00</time>
+      </div>
 
 			<footer role="contentinfo">
         <p class="copyright">The Magic of Automated Accessibility Testing<br>
-          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com/id24_2015" target="_blank" title="Link opens in a new window">marcysutton.com/id24_2015</a></p>
+          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com/jsconf_2015" target="_blank" title="Link opens in a new window">marcysutton.com/jsconf_2015</a></p>
       </footer>
 		</div>
 
@@ -396,6 +406,8 @@
 		<script src="js/reveal.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
     <script src="lib/js/angular-aria.js"></script>
+    <script src="demos/pizza-timer/node_modules/jquery.countdown/jquery.countdown.js"></script>
+      
 		<script>
 
 			// Full list of configuration options available here:
@@ -437,6 +449,37 @@
 				]
 			});
 		</script>
+    <script>
+    var initialized = false;
+
+    $(document).ready(function() {
+      var elTimerApp = $('.timerApp');
+      var elTimer = elTimerApp.find('time');
+      var pizzaButton = $('pizza-button');
+
+      var minute = 60000;
+      var minutes30 = minute * 30;
+
+      $('pizza-button').on('keypress click', function($event) {
+        if ($event.type === 'click' || $event.keyCode === 32) {
+          var now = new Date();
+          var then = new Date(now.getTime() + minutes30);
+
+          elTimerApp.addClass('initialized');
+          elTimer.countDown({endDate: then});
+          initialized = true;
+          
+          $(this).hide();
+        }
+      });
+
+      Reveal.addEventListener('slidechanged', function(event) {
+        if (event.currentSlide.getAttribute('data-id') && initialized === true) {
+          elTimerApp.addClass('minimized');
+        }
+      }, false);
+    });
+    </script>
     <script>
     var app = angular.module('app', ['ngAria'], function($ariaProvider) {
       $ariaProvider.config({

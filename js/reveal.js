@@ -33,7 +33,7 @@
 		// Configurations defaults, can be overridden at initialization time
 		config = {
 
-			elementIgnoreRegex: /some-checkbox/i,
+			elementIgnoreRegex: /button|some-checkbox|pizza-button/i,
 
 			// The "normal" size of the presentation, aspect ratio will be preserved
 			// when the presentation is scaled to fit different resolutions

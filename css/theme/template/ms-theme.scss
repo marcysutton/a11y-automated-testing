@@ -960,60 +960,61 @@ body {
     }
   }
 }
+/* PIZZA! */
+.timerApp {
+  opacity: 0;
+  display: flex;
+  -webkit-flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  transition: all 0.75s;
 
-/* fonts */
-.jqcloud {
-  font-size: 0.65em;
-  /*text-shadow: 1px 3px 3px #000;*/ }
+  &.initialized {
+    opacity: 1;
+  }
+  &.minimized {
+    align-items: flex-start;
+    justify-content: flex-end;
 
-.jqcloud a {
-  font-size: inherit;
-  text-decoration: none; }
+    time {
+      font-size: 1.5em;
+    }
+  }
 
-.jqcloud span.w10 {
-  font-size: 550%;
-  line-height: 100%; }
+  time {
+    background-color: #000;
+    color: #fff;
+    display: inline;
+    font-family: Menlo, monospace;
+    font-size: 4em;
+    font-weight: normal;
+    padding: 0.25em 0.5em;
+    position: relative;
+  }
+  .button.pizza {
+    background-color: lime;
+    color: #000;
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+  .separator {
+    background-color: transparent;
+  }
+}
+.reveal section {
+  pizza-button {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
 
-.jqcloud span.w9 {
-  font-size: 500%;
-  line-height: 100%; }
-
-.jqcloud span.w8 {
-  font-size: 450%;
-  line-height: 100%; }
-
-.jqcloud span.w7 {
-  font-size: 400%;
-  line-height: 100%; }
-
-.jqcloud span.w6 {
-  font-size: 350%;
-  line-height: 100%; }
-
-.jqcloud span.w5 {
-  font-size: 300%;
-  line-height: 100%; }
-
-.jqcloud span.w4 {
-  font-size: 250%;
-  line-height: 100%; }
-
-.jqcloud span.w3 {
-  font-size: 200%;
-  line-height: 100%; }
-
-.jqcloud span.w2 {
-  font-size: 150%;
-  line-height: 100%; }
-
-.jqcloud span.w1 {
-  font-size: 100%;
-  line-height: 100%; }
-
-/* layout */
-.jqcloud {
-  overflow: hidden;
-  position: relative; }
-
-.jqcloud span {
-  padding: 0; }
+    img {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

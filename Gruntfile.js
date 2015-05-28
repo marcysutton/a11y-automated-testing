@@ -104,6 +104,7 @@ module.exports = function(grunt) {
           port: port,
           base: '.',
           livereload: true,
+          hostname: 'localhost',
           open: true,
           onCreateServer: function(server, connect, options) {
             app = tty.createServer({
