@@ -287,6 +287,21 @@
           <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" class="plain">
         </section>
 
+        <section data-state="title-slide">
+          <h2 class="h4-style">Fixing test failures</h2>
+          <figure class="layeredFragments">
+            <div>
+              <img src="img/angular-material-start-html-error.png" alt="Bottom Sheet HTML with text alternative missing" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-html-fixed.png" alt="Bottom Sheet HTML with text alternative added" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-html-fixed-highlighted.png" alt="Bottom Sheet HTML with text alternative added and highlighted" class="plain">
+            </div>
+          </figure>
+        </section>
+
         <!--<section>
           <h2 class="h4-style">Run Protractor Tests</h2>
           <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
@@ -342,6 +357,7 @@
 
     it('should attach to ng-click', function() {
       compileElement('<div ng-click="someAction()"></div>');
+      expect(element.attr('tabindex')).toBe('0');
     });
     ...
         </code></pre>
@@ -357,18 +373,18 @@
             <li class="fragment">Keyboard, screen reader</li>
             <li class="fragment">Firefox Web Developer Toolbar<br>
               Chrome Accessibility Developer Tools</li>
-            <li class="fragment">End-to-end, Unit testing</li>
+            <li class="fragment">A11y, Protractor, Unit testing</li>
           </ul>
         </section>
         
-        <section>
+        <!--<section>
           <p>Computers are great but</p>
           <h2 style="margin-bottom: 0.15em;"><em>You also need people</em></h2>
           <p style="margin: 0 0 1em;">To test your sites</p>
           <figure>
             <img src="img/waynes-world-pizza-hut-still.gif" alt="Waynes World fake Pizza Hut commercial scene" style="min-height: 400px;">
           </figure>
-        </section>
+        </section>-->
 
         <section>
           <h2>Resources</h2>
