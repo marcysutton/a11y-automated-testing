@@ -41,18 +41,18 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-        <section data-state="title-slide">
+        <!--<section data-state="title-slide">
           <pizza-button role="button" tabindex="0">
             <img src="img/order_pizza_with_panic_button.jpg" alt="Push button get pizza" style="min-height: 300px; border:0" class="plain">
           </pizza-button>
           <aside class="notes">I wanted a way to work pizza into this accessibility talk. So let's order a pizza, and I'll teach you how to automate accessibility into your workflow in the time it takes to get here.</aside>
-        </section>
+        </section>-->
 
 				<section data-state="title-slide" data-id="start">
           <h1>30 Minutes or Less: <br>
             The Magic of Automated Accessibility Testing</h1>
 					<p>Marcy Sutton, Seattle, WA<br>Accessibility Engineer, Angular Core Team Member</p>
-					<p>Slides: <a href="http://marcysutton.com/jsconf_2015">http://marcysutton.com/jsconf_2015</a></p>
+					<p>Slides: <a href="http://marcysutton.com/jsconf2015">http://marcysutton.com/jsconf2015</a></p>
 				</section>
 
         <section>
@@ -116,7 +116,7 @@
         <section>
           <h2 class="h3-style">Next thing:</h2>
           <h3 class="h2-style">Use a screen reader</h3>
-          <!--<h4><a href="https://soundcloud.com/" target="_blank" title="Soundcloud opens in a new window">Demo: Soundcloud</a></h4>-->
+          <h4><a href="https://soundcloud.com/" target="_blank" title="Soundcloud opens in a new window">Demo: Soundcloud</a></h4>
         </section>
 
         <section>
@@ -206,10 +206,10 @@
           </figure>
         </section>
 
-        <section>
+        <!--<section>
           <h2 class="h4-style">A11y Command-Line Demo</h2>
           <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
-        </section>
+        </section>-->
 
         <section>
           <h2>Ways to Integrate</h2>
@@ -287,10 +287,10 @@
           <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" class="plain">
         </section>
 
-        <section>
+        <!--<section>
           <h2 class="h4-style">Run Protractor Tests</h2>
           <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
-        </section>
+        </section>-->
 
         <section>
           <h2>Unit Testing for Accessibility</h2>
@@ -350,17 +350,14 @@
         </section>
 
         <section>
-          <h2>Accessibility Testing,<br>
-            <em>delivered</em></h2>
+          <h2>Accessibility Testing,</h2>
+           <h3><em>delivered</em></h3>
             <div class="separator inset-width-smaller"><hr></div>
-          <ul>
-            <li class="fragment"><em>Manual:</em> <br>
-            Keyboard, screen reader</li>
-            <li class="fragment"><em>Sorta automated:</em><br>
-              Firefox Web Developer Toolbar<br>
+          <ul class="spaced-list">
+            <li class="fragment">Keyboard, screen reader</li>
+            <li class="fragment">Firefox Web Developer Toolbar<br>
               Chrome Accessibility Developer Tools</li>
-            <li class="fragment"><em>Automated:</em><br>
-            End-to-end, Unit testing</li>
+            <li class="fragment">End-to-end, Unit testing</li>
           </ul>
         </section>
         
@@ -392,13 +389,13 @@
         </section>
 			</div>
       
-      <div class="timerApp">
+      <!--<div class="timerApp">
         <time class="pizza">30:00</time>
-      </div>
+      </div>-->
 
 			<footer role="contentinfo">
         <p class="copyright">The Magic of Automated Accessibility Testing<br>
-          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com/jsconf_2015" target="_blank" title="Link opens in a new window">marcysutton.com/jsconf_2015</a></p>
+          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com/jsconf2015" target="_blank" title="Link opens in a new window">marcysutton.com/jsconf2015</a></p>
       </footer>
 		</div>
 
@@ -406,7 +403,7 @@
 		<script src="js/reveal.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
     <script src="lib/js/angular-aria.js"></script>
-    <script src="demos/pizza-timer/node_modules/jquery.countdown/jquery.countdown.js"></script>
+    <!--<script src="demos/pizza-timer/node_modules/jquery.countdown/jquery.countdown.js"></script>-->
       
 		<script>
 
@@ -449,7 +446,7 @@
 				]
 			});
 		</script>
-    <script>
+    <!--<script>
     var initialized = false;
 
     $(document).ready(function() {
@@ -479,7 +476,7 @@
         }
       }, false);
     });
-    </script>
+    </script>-->
     <script>
     var app = angular.module('app', ['ngAria'], function($ariaProvider) {
       $ariaProvider.config({
