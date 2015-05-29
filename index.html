@@ -52,7 +52,7 @@
           <h1>30 Minutes or Less: <br>
             The Magic of Automated Accessibility Testing</h1>
 					<p>Marcy Sutton, Seattle, WA<br>Accessibility Engineer, Angular Core Team Member</p>
-					<p>Slides: <a href="http://marcysutton.com/jsconf_2015">http://marcysutton.com/jsconf_2015</a></p>
+					<p>Slides: <a href="http://marcysutton.com/jsconf2015">http://marcysutton.com/jsconf2015</a></p>
 				</section>
 
         <section>
@@ -116,7 +116,7 @@
         <section>
           <h2 class="h3-style">Next thing:</h2>
           <h3 class="h2-style">Use a screen reader</h3>
-          <!--<h4><a href="https://soundcloud.com/" target="_blank" title="Soundcloud opens in a new window">Demo: Soundcloud</a></h4>-->
+          <h4><a href="https://soundcloud.com/" target="_blank" title="Soundcloud opens in a new window">Demo: Soundcloud</a></h4>
         </section>
 
         <section>
@@ -287,6 +287,21 @@
           <img src="img/protractor-a11y-material-start.png" alt="Protractor output on the terminal" class="plain">
         </section>
 
+        <section data-state="title-slide">
+          <h2 class="h4-style">Fixing test failures</h2>
+          <figure class="layeredFragments">
+            <div>
+              <img src="img/angular-material-start-html-error.png" alt="Bottom Sheet HTML with text alternative missing" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-html-fixed.png" alt="Bottom Sheet HTML with text alternative added" class="plain">
+            </div>
+            <div class="fragment">
+              <img src="img/angular-material-start-html-fixed-highlighted.png" alt="Bottom Sheet HTML with text alternative added and highlighted" class="plain">
+            </div>
+          </figure>
+        </section>
+
         <section>
           <h2 class="h4-style">Run Protractor Tests</h2>
           <iframe src="http://localhost:8080/" style="min-height: 710px; width: 100%;"></iframe>
@@ -342,6 +357,7 @@
 
     it('should attach to ng-click', function() {
       compileElement('<div ng-click="someAction()"></div>');
+      expect(element.attr('tabindex')).toBe('0');
     });
     ...
         </code></pre>
@@ -350,28 +366,25 @@
         </section>
 
         <section>
-          <h2>Accessibility Testing,<br>
-            <em>delivered</em></h2>
+          <h2>Accessibility Testing,</h2>
+           <h3><em>delivered</em></h3>
             <div class="separator inset-width-smaller"><hr></div>
-          <ul>
-            <li class="fragment"><em>Manual:</em> <br>
-            Keyboard, screen reader</li>
-            <li class="fragment"><em>Sorta automated:</em><br>
-              Firefox Web Developer Toolbar<br>
+          <ul class="spaced-list">
+            <li class="fragment">Keyboard, screen reader</li>
+            <li class="fragment">Firefox Web Developer Toolbar<br>
               Chrome Accessibility Developer Tools</li>
-            <li class="fragment"><em>Automated:</em><br>
-            End-to-end, Unit testing</li>
+            <li class="fragment">A11y, Protractor, Unit testing</li>
           </ul>
         </section>
         
-        <section>
+        <!--<section>
           <p>Computers are great but</p>
           <h2 style="margin-bottom: 0.15em;"><em>You also need people</em></h2>
           <p style="margin: 0 0 1em;">To test your sites</p>
           <figure>
             <img src="img/waynes-world-pizza-hut-still.gif" alt="Waynes World fake Pizza Hut commercial scene" style="min-height: 400px;">
           </figure>
-        </section>
+        </section>-->
 
         <section>
           <h2>Resources</h2>
@@ -398,7 +411,7 @@
 
 			<footer role="contentinfo">
         <p class="copyright">The Magic of Automated Accessibility Testing<br>
-          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com/jsconf_2015" target="_blank" title="Link opens in a new window">marcysutton.com/jsconf_2015</a></p>
+          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com/jsconf2015" target="_blank" title="Link opens in a new window">marcysutton.com/jsconf2015</a></p>
       </footer>
 		</div>
 
