@@ -1,0 +1,3 @@
+[submodule "material-start"]
+	path = demos/material-start/material-start
+	url = git@github.com:angular/material-start.git
